@@ -1,0 +1,48 @@
+db.users.insert({
+  "username": "Hassan",
+  "password": "password",  
+  "email": "hassanabdelazim.max@gmail.com",
+  "age": 24,
+  "createdAt": new Date(),
+  "updatedAt": new Date(),
+  "todos": [
+    {
+      "title": "Finish alx tasks",
+      "description": "Complete the f tasks bro",
+      "dueDate": new Date(),
+      "completed": false,
+      "tags": ["work", "Alx"],
+      "createdAt": new Date(),
+      "updatedAt": new Date(),
+    },
+    {
+      "title": "Buy groceries",
+      "description": "Buy groceries",
+      "dueDate": new Date(),
+      "completed": false,
+      "tags": ["personal", "shopping"],
+      "createdAt": new Date(),
+      "updatedAt": new Date(),
+    }
+  ]
+});
+
+
+db.users.updateOne(
+  { username: "Hassan" },  // we will save the
+  // insert new  todo
+  {
+    $push: {
+      todos: {
+        title: "Call plumber",
+        description: "Fix the leak in the kitchen",
+        dueDate: new Date(),
+        completed: false,
+        tags: ["home"],
+        createdAt: new Date(),
+        updatedAt: new Date()
+      }
+    }
+  }
+);
+// cat model/mongodb | mongosh MONGO_URI/todolist
