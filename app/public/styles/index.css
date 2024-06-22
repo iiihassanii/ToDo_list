@@ -1,0 +1,128 @@
+
+:root {
+    --blue: #A18AFF;
+    --light-purple: #CA8BFE;
+    --cyan: #3FD4F4;
+    --pink: #FD99AF;
+    --grey: #717082;
+    --yellow: #FAC608;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 300;
+}
+
+html, body {
+    height: 100%; 
+    background-color: var(--blue);
+}
+
+body {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+/*Big container */
+.container {
+    display: flex;
+    width: 98%;
+    height: 96%;  
+}
+
+/*left side of the screen*/
+.navigation {
+    border-radius: 8px;
+    padding: 8px;
+    width: 20%;
+    height: 100%;
+    background-color: white;
+    min-width: 300px;
+}
+.profile {
+    padding: 8px;
+    height: 10%;
+    display: flex;
+    align-items: center;
+}
+.profile_icon {
+    height: 50px;
+    width: 50px;
+    padding: 8px;
+    background-image: url(img/person.jpg);
+    background-size: cover;
+    border-radius: 50%;
+    margin-right: 16px;
+}
+
+.break {
+    width: 60%;
+    height: 4px;
+    border-radius: 50px;
+    margin: auto;
+    background-color: var(--light-purple);
+}
+
+
+.options {
+    height: 90%;
+    display: flex;
+    align-items: center;
+}
+
+.options ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    font-size:  small;
+    margin-left: 8px;
+    
+}
+
+.options ul li {
+    padding: 0;
+    margin: 0;
+    margin-left: 30px;
+    display: flex;
+    margin-top: 20px;
+    
+}
+.options ul li h5{
+    height: 15px;
+}
+.options ul li .exception{
+    margin-top: 0px;
+}
+
+
+.options ul li .icon_setting {
+    height: 15px;
+    width: 15px;
+    padding: 8px;
+    margin-right: 20px;
+    background-image: url(img/setting.svg);
+    background-size: cover;
+}
+
+.options ul li .color_filter {
+    margin-top: 1px;
+    margin-right: 20px;
+    height: 10px;
+    width: 10px;
+    background-color: #3FD4F4;
+    border-radius: 50px;
+}
+
+.content {
+    width: 80%;
+}
