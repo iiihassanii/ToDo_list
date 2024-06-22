@@ -49,13 +49,15 @@ body {
     background-color: white;
     min-width: 300px;
 }
+
+/*Profile styles */
 .profile {
     padding: 8px;
     height: 10%;
     display: flex;
     align-items: center;
 }
-.profile_icon {
+.profile .profile_icon {
     height: 50px;
     width: 50px;
     padding: 8px;
@@ -72,8 +74,10 @@ body {
     margin: auto;
     background-color: var(--light-purple);
 }
+/*End of Profile styles */
 
 
+/*Options styles */
 .options {
     height: 90%;
     display: flex;
@@ -122,6 +126,8 @@ body {
     background-color: #3FD4F4;
     border-radius: 50px;
 }
+
+/*End of Options styles */
 
 .content {
     width: 80%;
