@@ -13,7 +13,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 500;
@@ -28,33 +27,43 @@ html, body {
 }
 
 body {
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
+    padding: 1rem;
 }
+
 
 /*Big container */
 .container {
-    display: flex;
-    width: 98%;
-    height: 96%;  
+    display: grid;
+    grid-template-columns: 300px minmax(300px, 1fr);
+    width: 100%;
+    height: 100%;  
+}
+
+/* Handle small screen */
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    }
 }
 
 /*left side of the screen*/
 .navigation {
-    border-radius: 8px;
+    
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
     padding: 8px;
-    width: 20%;
     height: 100%;
     background-color: white;
-    min-width: 300px;
+    display: grid;
+    grid-template-rows: minmax(80px, 10%) 90%;
 }
 
 /*Profile styles */
 .profile {
     padding: 8px;
-    height: 10%;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
 }
 .profile .profile_icon {
@@ -66,12 +75,16 @@ body {
     border-radius: 50%;
     margin-right: 16px;
 }
+.profile .user_name {
+    width: 60%;
+}
 
 .break {
     width: 60%;
     height: 4px;
     border-radius: 50px;
     margin: auto;
+    margin-top: 10px;
     background-color: var(--light-purple);
 }
 /*End of Profile styles */
@@ -104,7 +117,7 @@ body {
 .options ul li h5{
     height: 15px;
 }
-.options ul li .exception{
+.options .exception{
     margin-top: 0px;
 }
 
@@ -118,17 +131,189 @@ body {
     background-size: cover;
 }
 
+.options ul li .icon_today {
+    height: 15px;
+    width: 15px;
+    padding: 8px;
+    margin-right: 20px;
+    background-image: url(img/today.svg);
+    background-size: cover;
+}
+
+.options ul li .icon_waiting {
+    height: 15px;
+    width: 15px;
+    padding: 8px;
+    margin-right: 20px;
+    background-image: url(img/waiting.svg);
+    background-size: cover;
+}
+
 .options ul li .color_filter {
-    margin-top: 1px;
+    margin: auto;
+    margin-left: 0px;
     margin-right: 20px;
     height: 10px;
     width: 10px;
-    background-color: #3FD4F4;
+    background-color: var(--light-purple);
     border-radius: 50px;
 }
 
+.options h5 {
+    font-size: 14px;
+    line-height: 14px;
+    color: var(--grey);
+}
 /*End of Options styles */
 
+
+
+/*Right side styles */
 .content {
-    width: 80%;
+    display: grid;
+    grid-template-rows: minmax(200px, 40%) 1fr;
+}
+
+.static_content {
+    padding-left: 8%;
+    padding-right:  8%;
+    padding-top: 20px;
+    
+}
+.static_content h1, h2 {
+    color: white;
+}
+.static_content .add_task{
+    display: flex;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    margin-top: 40px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.static_content .colors_filter{
+    display: flex;
+    max-width: 20%;
+}
+
+.static_content .color_filter {
+    margin: auto;
+    margin-left: 30px;
+    margin-right: 5px;
+    height: 10px;
+    width: 10px;
+    background-color: var(--light-purple);
+    border-radius: 50px;
+}
+
+.static_content .color_filter1 {
+    margin: auto;
+    margin-left: 0px;
+    margin-right: 5px;
+    height: 10px;
+    width: 10px;
+    background-color: var(--cyan);
+    border-radius: 50px;
+}
+.static_content .color_filter2{
+    margin: auto;
+    margin-left: 0px;
+    margin-right: 5px;
+    height: 10px;
+    width: 10px;
+    background-color: var(--yellow);
+    border-radius: 50px;
+}
+
+.static_content .text {
+    margin-left: 5px;
+    width: 100%;
+}
+.static_content h4{
+    color: var(--grey); 
+    opacity: 30%;
+    
+}
+
+.static_content .icons {
+    display: flex;
+}
+
+.static_content .icons .schedule{
+    height: 15px;
+    width: 15px;
+    margin: auto;
+    margin-right: 5px;
+    background-image: url(img/today.svg);
+    background-size: cover;
+}
+.static_content .icons .save{
+    height: 15px;
+    width: 15px;
+    margin: auto;
+    margin-right: 20px;
+    background-image: url(img/save.svg);
+    background-size: cover;
+}
+/* END side styles */
+
+
+.dynamic_content {
+    padding-left: 12%;
+    padding-right:  12%;
+}
+
+.dynamic_content .my_tasks{
+    display: flex;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    margin-top: 40px;
+    background-color: white;
+    border-radius: 8px;
+}
+.dynamic_content .color_filter{
+    margin: auto;
+    margin-left: 30px;
+    margin-right: 5px;
+    height: 10px;
+    width: 10px;
+    background-color: var(--light-purple);
+    border-radius: 50px;
+}
+
+.dynamic_content .text{
+    margin-left: 5px;
+    flex-grow: 2;
+    color: var(--grey); 
+    
+}
+
+.dynamic_content .time{
+    margin-left: 5px;
+    margin-right: 10px;
+    color: var(--grey); 
+    
+}
+
+
+
+.check-input {
+    display: none; /* Hide the checkbox */
+}
+
+.dynamic_content .check {
+    height: 15px;
+    width: 15px;
+    margin: auto;
+    margin-right: 20px;
+    background-image: url(img/check.svg);
+    background-size: cover;
+    cursor: pointer; /* Make the element look like a clickable button */
+}
+
+.check-input:checked + .check {
+    background-image: url(img/setting.svg);
 }
