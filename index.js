@@ -10,3 +10,5 @@ mongoose.connect(process.env.MONGO_URI)
   .catch(err => console.error('Could not connect to MongoDB', err));
 
 login ("venus", "vini")
+console.log("***************")
+signin("hassanabdelazim.max@gmail.com","venus", "vini")

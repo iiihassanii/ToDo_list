@@ -35,7 +35,7 @@ async function login(identifier, password) {
  * @param {string} email - The email address for the new user.
  * @returns {Promise<void>} - A promise that resolves when the sign-in operation is complete.
  */
-async function signin(username, password, email) {
+async function signin(email, username, password) {
   const newUser = new User({
     username: username,
     password: password,
@@ -44,7 +44,7 @@ async function signin(username, password, email) {
 
   newUser.save()
     .then(user => console.log('User saved:', user))
-    .catch(err => console.error('Error saving user:', err.message));
+    .catch(err => console.error('Error saving user:', err.keyValue));
 }
 
 export { login , signin }
